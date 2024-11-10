@@ -1,15 +1,26 @@
-<div id="map" style="height: 400px; width: 100%;"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
-
-
-<h3>Reviews</h3>
-<ul id="reviews">
-    {% for review in reviews %}
-        <li>{{ review }}</li>
-    {% endfor %}
-</ul>
-<form action="/add_review" method="post">
-    <input type="hidden" name="restaurant_id" value="{{ restaurant_id }}">
-    <textarea name="review" placeholder="Leave a review"></textarea>
-    <button type="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+    <h2>Recognized Dish: {{ dish }}</h2>
+    <h3>Nearby Restaurants:</h3>
+    <ul>
+        {% for restaurant in restaurants %}
+            <li>
+                <strong>{{ restaurant.name }}</strong><br>
+                Address: {{ restaurant.location.address1 }}, {{ restaurant.location.city }}<br>
+                Rating: {{ restaurant.rating }}<br>
+                <a href="{{ restaurant.url }}" target="_blank">View on Yelp</a>
+                <form action="/add_review" method="post">
+                    <input type="hidden" name="restaurant_id" value="{{ restaurant.id }}">
+                    <textarea name="review" placeholder="Leave a review"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
