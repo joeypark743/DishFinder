@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Image to Restaurant Finder</title>
+</head>
+<body>
+    <h1>Upload a Food Image</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    {% if dish %}
+        <h2>Identified Dish: {{ dish }}</h2>
+        <h3>Nearby Restaurants:</h3>
+        <ul>
+            {% for restaurant in restaurants %}
+                <li>
+                    <strong>{{ restaurant.name }}</strong><br>
+                    Address: {{ restaurant.location.address1 }}, {{ restaurant.location.city }}<br>
+                    Rating: {{ restaurant.rating }}<br>
+                    <a href="{{ restaurant.url }}" target="_blank">View on Yelp</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+<div id="map" style="height: 400px; width: 100%;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+
+
+<h3>Reviews</h3>
+<ul id="reviews">
+    {% for review in reviews %}
+        <li>{{ review }}</li>
+    {% endfor %}
+</ul>
+<form action="/add_review" method="post">
+    <input type="hidden" name="restaurant_id" value="{{ restaurant_id }}">
+    <textarea name="review" placeholder="Leave a review"></textarea>
+    <button type="submit">Submit</button>
+</form>
