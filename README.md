@@ -1,14 +1,13 @@
 # DishFinder 🍽️
 
-DishFinder is a web application that uses image recognition to identify dishes from uploaded food photos and recommends nearby restaurants where the dish can be enjoyed. This project combines AI-based food image recognition, personalized restaurant recommendations, and interactive map integration for a complete user experience.
+DishFinder is a web application that uses third-party ML-based image recognition to identify dishes from uploaded food photos and recommends nearby restaurants where the dish can be enjoyed. This project combines third-party ML-based food image recognition, personalized restaurant recommendations, and interactive map integration for a seamless user experience.
 
 ## Features
 
-- **Dish Recognition**: Upload a food image to identify the dish using an AI-powered image recognition API.
-- **Restaurant Recommendations**: Get a list of nearby restaurants serving the recognized dish, filtered by user preferences such as budget and cuisine type.
-- **Interactive Maps**: See restaurant locations on an interactive Google Map centered on the user's location or a default location in Boston, Kenmore.
-- **User Reviews**: Users can leave and view reviews for recommended restaurants.
-- **Real-Time Feedback**: Provides instant feedback for dish recognition using WebSocket integration.
+- **Dish Recognition**: Upload a food image to identify the dish using a third-party ML-based image recognition API.
+- **Restaurant Recommendations**: Provides a list of nearby restaurants serving the recognized dish, filtered by user preferences such as budget and cuisine type.
+- **Interactive Maps**: Displays restaurant locations on an interactive Google Map, centered on the user's location or a default location in Boston, Kenmore.
+- **Real-Time Feedback**: Delivers instant feedback on dish recognition status using WebSocket integration.
 
 ## Tech Stack
 
@@ -44,13 +43,6 @@ DishFinder is a web application that uses image recognition to identify dishes f
     ```
 4. **Set Up API Keys**:
    - Create a `config.py` file in the project root to store API keys.
-   - Add the following content to `config.py`:
-   
-     # config.py  
-     ```
-     FOOD_IMAGE_API_KEY = 'your_logmeal_api_key_here'  
-     RESTAURANT_API_KEY = 'your_yelp_or_google_places_api_key_here'
-     ```
 
 ### Running the Application
 
@@ -98,12 +90,5 @@ DishFinder/
 - **LogMeal API**: Recognizes food items from images, returning a dish name and ingredients.
 - **Yelp or Google Places API**: Retrieves nearby restaurants based on the recognized dish, user’s location, and preferences.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
-
-- **LogMeal** for food recognition.
-- **Yelp API / Google Places API** for restaurant data.
 - Inspired by open-source project: [Recipe Generation from Food Image](https://github.com/navassherif98/Recipe-Generation-from-Food-Image)
