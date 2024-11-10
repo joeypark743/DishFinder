@@ -98,15 +98,6 @@ DishFinder/
 - **LogMeal API**: Recognizes food items from images, returning a dish name and ingredients.
 - **Yelp or Google Places API**: Retrieves nearby restaurants based on the recognized dish, user’s location, and preferences.
 
-## Troubleshooting
-
-- **Permission Denied (Public Key)**: If you encounter permission issues when pushing changes to GitHub, make sure your SSH key is added to your GitHub account.
-- **API Errors**: Double-check API keys in `config.py`. Ensure you have correct permissions for the APIs being used.
-
-## Contributing
-
-We welcome contributions! Please fork the repository and submit a pull request with any changes or enhancements.
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
